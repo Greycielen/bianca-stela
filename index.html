@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bianca Stela · Consultoria de Imagem</title>
+<meta name="description" content="Consultoria de imagem que ajuda mulheres a compreenderem a própria imagem, reconhecerem suas características e expressarem sua identidade. Coloração pessoal, Kibbe Body Types e estilo.">
+<meta name="theme-color" content="#0B3B32">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bianca Stela · Consultoria de Imagem">
+<meta property="og:description" content="Decodificar a beleza individual para libertar a autenticidade.">
+<meta property="og:image" content="assets/bianca-hero.png">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
+
+<style>
+/* ======================================================================
+   BIANCA STELA — Consultoria de Imagem
+   Tokens derivados do Design System oficial da marca.
+   ====================================================================== */
+:root{
+  /* Esmeralda — cor protagonista */
+  --emerald-950:#061913; --emerald-900:#0B3B32; --emerald-800:#14584B;
+  --emerald-700:#1E6E5E; --emerald-500:#3A8A78; --emerald-300:#8FB6AB;
+  --emerald-100:#D6E4DE; --emerald-50:#EDF3F0;
+  /* Dourado — acabamento premium */
+  --gold-700:#8A6A34; --gold-600:#9E7C3E; --gold-500:#C9A55C;
+  --gold-400:#E4CFA3; --gold-200:#F0E4CB; --gold-100:#F7F0E2;
+  /* Neutros */
+  --pearl:#F7F4EE; --white:#FFFFFF; --beige:#EFE7DE; --nude:#E3D2C6;
+  --sage:#8C9A8E; --ink:#14110F; --graphite:#4A4540; --mist:#9C958D;
+  --hairline:#E2DCD3;
+  /* Gradientes metálicos */
+  --gold-leaf:linear-gradient(103deg,#A67F38 0%,#D9B76C 30%,#FFFBEB 46%,#D9B76C 62%,#A67F38 100%);
+  --gold-leaf-soft:linear-gradient(103deg,#C9A55C 0%,#E4CFA3 34%,#FFF6D8 50%,#E4CFA3 66%,#C9A55C 100%);
+  --emerald-veil:linear-gradient(160deg,#14584B 0%,#0B3B32 62%,#061913 100%);
+  --veil-photo:linear-gradient(180deg,rgba(11,59,50,0) 34%,rgba(11,59,50,.62) 100%);
+  --grain:radial-gradient(rgba(20,17,15,.035) 1px,transparent 1px);
+
+  /* Tipografia */
+  --font-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --font-sans:"Jost","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  /* Semântica */
+  --text-title:var(--emerald-900); --text-body:var(--graphite); --text-muted:var(--mist);
+  --text-accent:var(--gold-600); --border-hairline:var(--hairline);
+
+  /* Espaço */
+  --page-margin:clamp(20px,5vw,80px);
+  --container:1200px; --container-narrow:760px;
+  --section-y:clamp(80px,11vw,128px);
+
+  /* Movimento */
+  --dur-fast:140ms; --dur-base:240ms; --dur-reveal:720ms;
+  --ease-standard:cubic-bezier(.22,.61,.36,1);
+  --ease-editorial:cubic-bezier(.16,.84,.28,1);
+
+  --shadow-md:0 12px 32px -12px rgba(11,59,50,.14);
+  --shadow-lg:0 28px 64px -24px rgba(11,59,50,.22);
+  --focus-ring:0 0 0 2px var(--pearl),0 0 0 3.5px rgba(158,124,62,.55);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--pearl); color:var(--text-body);
+  font-family:var(--font-sans); font-size:1rem; font-weight:300; line-height:1.62;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+img{max-width:100%; display:block}
+a{color:var(--emerald-800); text-decoration:none}
+::selection{background:var(--gold-200); color:var(--emerald-900)}
+:focus-visible{outline:none; box-shadow:var(--focus-ring)}
+
+/* ---- Tipografia utilitária ---- */
+.eyebrow{
+  font-family:var(--font-sans); font-size:.72rem; font-weight:500;
+  letter-spacing:.26em; text-transform:uppercase; color:var(--text-accent); line-height:1.4;
+}
+.eyebrow.on-dark{color:var(--gold-400)}
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:300; color:var(--text-title); margin:0; letter-spacing:-.005em}
+.display{font-size:clamp(2.7rem,6vw,4.6rem); line-height:1.02; letter-spacing:-.015em; font-weight:300}
+.h1{font-size:clamp(2.1rem,4.4vw,3rem); line-height:1.1; font-weight:300}
+.h2{font-size:clamp(1.65rem,3vw,2.2rem); line-height:1.14; font-weight:400}
+.h3{font-size:1.3rem; line-height:1.3; font-weight:500}
+.lead{font-size:1.1rem; font-weight:300; line-height:1.72; text-wrap:pretty}
+.subtitle{font-family:var(--font-display); font-style:italic; font-size:1.25rem; line-height:1.45; font-weight:400; color:var(--text-body)}
+.quote{font-family:var(--font-display); font-style:italic; font-weight:300; line-height:1.24; color:var(--text-title)}
+em.gold{font-style:italic; font-weight:300; background:var(--gold-leaf); -webkit-background-clip:text; background-clip:text; color:transparent}
+.num{font-family:var(--font-display); font-weight:300; color:var(--text-accent); line-height:1; font-variant-numeric:lining-nums tabular-nums}
+.muted{color:var(--text-muted)}
+
+/* ---- Layout ---- */
+.container{width:100%; max-width:var(--container); margin-inline:auto; padding-inline:var(--page-margin)}
+.narrow{max-width:var(--container-narrow)}
+.section{padding-block:var(--section-y)}
+.rule{height:1px; border:0; background:var(--border-hairline); width:100%; margin:0}
+.rule-gold{height:1px; border:0; background:var(--gold-leaf-soft); width:100%; margin:0}
+.eyebrow-line{display:flex; align-items:center; gap:14px; margin-bottom:22px}
+.eyebrow-line::before{content:""; width:34px; height:1px; background:var(--gold-500); flex:none}
+.center .eyebrow-line{justify-content:center}
+
+/* ---- Botões ---- */
+.btn{
+  display:inline-flex; align-items:center; gap:10px; cursor:pointer;
+  font-family:var(--font-sans); font-size:.845rem; font-weight:500;
+  letter-spacing:.16em; text-transform:uppercase; border:1px solid transparent;
+  padding:15px 28px; transition:all var(--dur-base) var(--ease-standard);
+  background:none;
+}
+.btn .arrow{transition:transform var(--dur-base) var(--ease-standard)}
+.btn:hover .arrow{transform:translateX(4px)}
+.btn-gold{background:var(--emerald-900); color:var(--gold-400); border-color:var(--emerald-900)}
+.btn-gold:hover{background:var(--emerald-800); border-color:var(--emerald-800)}
+.btn-primary{background:var(--emerald-900); color:var(--pearl); border-color:var(--emerald-900)}
+.btn-primary:hover{background:var(--emerald-800); border-color:var(--emerald-800)}
+.btn-secondary{background:transparent; color:var(--emerald-900); border-color:var(--emerald-900)}
+.btn-secondary:hover{background:var(--emerald-900); color:var(--pearl)}
+.btn-ghost{padding:15px 4px; color:var(--emerald-800); border-bottom:1px solid rgba(158,124,62,.4)}
+.btn-ghost:hover{color:var(--gold-600)}
+.btn-ghost.on-dark{color:var(--gold-400); border-bottom-color:rgba(228,207,163,.4)}
+.btn-ghost.on-dark:hover{color:var(--pearl)}
+.btn:active{transform:scale(.985)}
+
+/* ======================================================================
+   HEADER
+   ====================================================================== */
+.header{
+  position:fixed; top:0; left:0; right:0; z-index:50; height:84px;
+  display:flex; align-items:center;
+  background:rgba(247,244,238,.86); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border-hairline);
+  transition:background var(--dur-base) var(--ease-standard), border-color var(--dur-base);
+}
+.header .container{display:flex; align-items:center; justify-content:space-between; width:100%}
+.brand{display:flex; align-items:center; gap:13px; border:0}
+.brand img{height:40px; width:auto}
+.brand .lockup{display:flex; flex-direction:column; line-height:1}
+.brand .lockup .name{font-family:var(--font-display); font-weight:300; font-size:1.2rem; letter-spacing:.05em; color:var(--emerald-900)}
+.brand .lockup .tag{font-family:var(--font-sans); font-weight:400; font-size:.56rem; letter-spacing:.42em; text-transform:uppercase; color:var(--gold-600); margin-top:4px}
+.nav{display:flex; align-items:center; gap:34px}
+.nav a{
+  font-family:var(--font-sans); font-size:.78rem; font-weight:400; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--emerald-900); border:0; position:relative; padding:4px 0;
+  transition:color var(--dur-base) var(--ease-standard);
+}
+.nav a::after{content:""; position:absolute; left:0; bottom:-2px; height:1px; width:0; background:var(--gold-500); transition:width var(--dur-base) var(--ease-standard)}
+.nav a:hover{color:var(--gold-600)}
+.nav a:hover::after{width:100%}
+.nav .btn{padding:11px 22px; font-size:.72rem}
+.menu-toggle{display:none; background:none; border:0; cursor:pointer; padding:8px; color:var(--emerald-900)}
+.menu-toggle svg{display:block}
+
+/* ======================================================================
+   HERO
+   ====================================================================== */
+.hero{
+  position:relative; background:var(--emerald-900); color:var(--pearl);
+  padding-top:84px; overflow:hidden;
+}
+.hero::before{content:""; position:absolute; inset:0; background:var(--grain); background-size:3px 3px; opacity:.5; pointer-events:none}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; min-height:640px; align-items:stretch}
+.hero-copy{
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(60px,8vw,104px) clamp(32px,5vw,72px) clamp(60px,8vw,104px) var(--page-margin);
+  position:relative; z-index:2;
+}
+.hero-copy .display{color:var(--pearl); margin-top:4px}
+.hero-copy p.lead{max-width:450px; margin:28px 0 0; color:rgba(247,244,238,.78); font-size:1.08rem}
+.hero-actions{display:flex; gap:18px; margin-top:42px; align-items:center; flex-wrap:wrap}
+.hero-photo{position:relative; min-height:420px}
+.hero-photo img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 22%}
+.hero-photo::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(11,59,50,.55) 0%,rgba(11,59,50,0) 22%)}
+.hero-seal{
+  position:absolute; left:calc(50% - 1px); bottom:34px; transform:translateX(-50%); z-index:3;
+  display:flex; flex-direction:column; align-items:center; gap:8px; color:rgba(247,244,238,.6);
+}
+.hero-seal .line{width:1px; height:40px; background:linear-gradient(180deg,transparent,rgba(228,207,163,.6))}
+.hero-seal span{font-size:.62rem; letter-spacing:.28em; text-transform:uppercase}
+
+/* ======================================================================
+   MANIFESTO / APRESENTAÇÃO
+   ====================================================================== */
+.manifesto{background:var(--pearl); text-align:center}
+.manifesto .quote{font-size:clamp(2rem,4.4vw,3.1rem); max-width:17ch; margin:22px auto 0}
+.manifesto p.lead{max-width:60ch; margin:34px auto 0}
+.manifesto .sign{margin-top:40px; display:inline-flex; flex-direction:column; align-items:center; gap:14px}
+
+/* ---- Bloco "sobre a consultoria" com imagem ---- */
+.split{display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,88px); align-items:center}
+.split.reverse .split-media{order:2}
+.split-media{position:relative}
+.split-media .frame{position:relative; aspect-ratio:4/5; overflow:hidden; background:var(--nude)}
+.split-media .frame img{width:100%; height:100%; object-fit:cover}
+.split-media .frame.arch{border-radius:180px 180px 0 0}
+.split-media .frame-rule{position:absolute; inset:14px; border:1px solid rgba(247,244,238,.5); pointer-events:none; z-index:2}
+.split-body .h2{margin-top:18px}
+.split-body p.lead{margin-top:22px; max-width:48ch}
+.split-body p + p{margin-top:16px}
+
+/* ---- Pilares (3 colunas) ---- */
+.pillars{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border-hairline); margin-top:54px; border:1px solid var(--border-hairline)}
+.pillar{background:var(--white); padding:38px 32px}
+.pillar .num{font-size:2.2rem; display:block}
+.pillar .h3{margin-top:18px; font-size:1.35rem}
+.pillar p{margin-top:12px; font-size:.95rem; line-height:1.6; color:var(--graphite)}
+
+/* ======================================================================
+   SERVIÇOS
+   ====================================================================== */
+.services{background:var(--white)}
+.svc-head{display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap}
+.svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:54px}
+.svc-card{
+  display:flex; flex-direction:column; background:var(--white);
+  border:1px solid var(--border-hairline); padding:36px 32px 32px;
+  transition:transform var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard), border-color var(--dur-base);
+}
+.svc-card:hover{transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--gold-400)}
+.svc-card .num{font-size:1.6rem}
+.svc-card .meta{display:flex; align-items:center; gap:10px; margin-top:4px}
+.svc-card .chip{font-family:var(--font-sans); font-size:.64rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--emerald-700); border:1px solid var(--emerald-100); padding:5px 10px}
+.svc-card .h3{margin-top:22px; font-size:1.45rem}
+.svc-card p{margin-top:14px; font-size:.95rem; line-height:1.62; flex:1}
+.svc-card .svc-rule{margin-top:26px}
+.svc-card .svc-foot{margin-top:18px; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); font-weight:400}
+
+/* ======================================================================
+   PACOTES (fundo escuro)
+   ====================================================================== */
+.packages{background:var(--emerald-900); color:var(--pearl); position:relative; overflow:hidden}
+.packages::before{content:""; position:absolute; inset:0; background:var(--grain); background-size:3px 3px; opacity:.5}
+.packages .container{position:relative; z-index:2}
+.packages .eyebrow{color:var(--gold-400)}
+.packages h2{color:var(--pearl)}
+.packages .subtitle{color:rgba(247,244,238,.72)}
+.pkg-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:54px}
+.pkg-card{
+  border:1px solid rgba(228,207,163,.28); padding:44px 40px;
+  background:rgba(255,255,255,.02); display:flex; flex-direction:column;
+  position:relative; transition:border-color var(--dur-base) var(--ease-standard), background var(--dur-base);
+}
+.pkg-card:hover{border-color:rgba(228,207,163,.6); background:rgba(255,255,255,.04)}
+.pkg-card .kicker{font-size:.7rem; letter-spacing:.24em; text-transform:uppercase; color:var(--gold-400); font-weight:500}
+.pkg-card .h2{color:var(--pearl); margin-top:16px; font-size:2rem}
+.pkg-card .pillars-mini{display:flex; gap:8px; margin-top:20px; flex-wrap:wrap}
+.pkg-card .pill{font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold-400); border:1px solid rgba(228,207,163,.35); padding:6px 12px; font-weight:400}
+.pkg-card p{margin-top:24px; color:rgba(247,244,238,.8); font-size:.98rem; line-height:1.68; flex:1}
+.pkg-card .pkg-rule{margin:28px 0 0; height:1px; border:0; background:rgba(228,207,163,.24)}
+
+/* ======================================================================
+   ESTRATÉGIA DE IMAGEM
+   ====================================================================== */
+.strategy{background:var(--beige)}
+.strategy .split-media .frame{aspect-ratio:3/4}
+.strategy ul{list-style:none; margin:26px 0 0; padding:0; display:grid; gap:14px}
+.strategy ul li{display:flex; gap:14px; align-items:flex-start; font-size:1rem; line-height:1.55}
+.strategy ul li::before{content:""; flex:none; width:7px; height:7px; border:1px solid var(--gold-600); border-radius:50%; margin-top:8px}
+
+/* ======================================================================
+   COMO FUNCIONA (etapas)
+   ====================================================================== */
+.steps{background:var(--pearl)}
+.steps-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border-hairline); margin-top:54px; border:1px solid var(--border-hairline)}
+.step{background:var(--pearl); padding:34px 26px}
+.step .num{font-size:1.9rem}
+.step .h3{margin-top:16px; font-size:1.18rem}
+.step p{margin-top:10px; font-size:.9rem; line-height:1.58}
+.steps-foot{margin-top:34px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; color:var(--text-body)}
+.steps-foot .tagpair{display:inline-flex; gap:10px}
+.steps-foot .modality{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--emerald-800); border:1px solid var(--emerald-100); padding:7px 14px; font-weight:500}
+
+/* ======================================================================
+   SOBRE BIANCA
+   ====================================================================== */
+.about{background:var(--white)}
+.about .frame-rule{border-color:rgba(228,207,163,.7)}
+.about .signature{font-family:var(--font-display); font-style:italic; font-size:1.8rem; color:var(--emerald-900); margin-top:30px}
+.about .cred{margin-top:18px; display:grid; gap:10px}
+.about .cred li{display:flex; gap:12px; align-items:baseline; font-size:.92rem; color:var(--graphite)}
+.about .cred li .k{font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-600); font-weight:500; flex:none; width:118px}
+
+/* ======================================================================
+   DIFERENCIAIS
+   ====================================================================== */
+.diff{background:var(--emerald-950); color:var(--pearl); position:relative; overflow:hidden}
+.diff::before{content:""; position:absolute; inset:0; background:var(--grain); background-size:3px 3px; opacity:.5}
+.diff .container{position:relative; z-index:2}
+.diff .eyebrow{color:var(--gold-400)}
+.diff h2{color:var(--pearl)}
+.diff-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px 48px; margin-top:48px}
+.diff-item{display:flex; gap:18px; align-items:flex-start; padding:22px 0; border-bottom:1px solid rgba(228,207,163,.18)}
+.diff-item .num{font-size:1.1rem; color:var(--gold-400); flex:none; min-width:30px}
+.diff-item p{color:rgba(247,244,238,.86); font-size:1rem; line-height:1.5}
+
+/* ======================================================================
+   LISTA DE ESPERA (form)
+   ====================================================================== */
+.waitlist{background:var(--nude); position:relative}
+.wl-grid{display:grid; grid-template-columns:.92fr 1.08fr; gap:clamp(40px,6vw,80px); align-items:start}
+.wl-intro .h1{margin-top:18px}
+.wl-intro p.lead{margin-top:22px; max-width:42ch}
+.wl-intro .note{margin-top:28px; font-size:.86rem; color:var(--graphite); max-width:40ch; line-height:1.6; border-left:1px solid var(--gold-500); padding-left:18px}
+.wl-form{background:var(--white); border:1px solid var(--border-hairline); padding:clamp(28px,4vw,44px)}
+.field{margin-bottom:22px}
+.field label{display:block; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--emerald-900); font-weight:500; margin-bottom:9px}
+.field label .opt{color:var(--text-muted); font-weight:400; letter-spacing:.08em}
+.field input[type=text], .field input[type=email], .field input[type=tel], .field textarea{
+  width:100%; font-family:var(--font-sans); font-size:1rem; font-weight:300; color:var(--ink);
+  background:var(--pearl); border:1px solid var(--border-hairline); padding:13px 15px; border-radius:0;
+  transition:border-color var(--dur-base) var(--ease-standard), box-shadow var(--dur-base);
+}
+.field input:focus, .field textarea:focus{outline:none; border-color:var(--gold-500); box-shadow:0 0 0 3px rgba(201,165,92,.14)}
+.field textarea{resize:vertical; min-height:92px; line-height:1.55}
+.choices{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.choice{position:relative}
+.choice input{position:absolute; opacity:0; inset:0; cursor:pointer; margin:0}
+.choice span{
+  display:flex; align-items:center; gap:10px; cursor:pointer;
+  border:1px solid var(--border-hairline); padding:13px 15px; font-size:.9rem; color:var(--graphite);
+  transition:all var(--dur-base) var(--ease-standard); background:var(--pearl);
+}
+.choice span::before{content:""; width:13px; height:13px; border:1px solid var(--emerald-300); border-radius:50%; flex:none; transition:all var(--dur-fast)}
+.choice input:checked + span{border-color:var(--emerald-800); color:var(--emerald-900); background:var(--emerald-50)}
+.choice input:checked + span::before{border-color:var(--emerald-800); background:var(--emerald-800); box-shadow:inset 0 0 0 3px var(--pearl)}
+.choice input:focus-visible + span{box-shadow:var(--focus-ring)}
+.wl-form .btn{width:100%; justify-content:center; margin-top:6px}
+.wl-form .privacy{margin-top:16px; font-size:.74rem; color:var(--text-muted); line-height:1.5; text-align:center}
+.form-status{margin-top:18px; padding:16px 18px; font-size:.92rem; line-height:1.5; display:none}
+.form-status.ok{display:block; background:var(--emerald-50); border:1px solid var(--emerald-100); color:var(--emerald-900)}
+.form-status.err{display:block; background:var(--gold-100); border:1px solid var(--gold-200); color:var(--gold-700)}
+.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+
+/* ======================================================================
+   FOOTER
+   ====================================================================== */
+.footer{background:var(--emerald-950); color:rgba(247,244,238,.72); padding:72px 0 40px; position:relative}
+.footer-top{display:flex; justify-content:space-between; gap:40px; flex-wrap:wrap; align-items:flex-start}
+.footer .brand .lockup .name{color:var(--pearl)}
+.footer .brand img{height:52px}
+.footer-tag{font-family:var(--font-display); font-style:italic; font-size:1.4rem; color:var(--gold-400); max-width:22ch; line-height:1.3}
+.footer-nav{display:flex; gap:30px; flex-wrap:wrap}
+.footer-nav a{font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(247,244,238,.72); border:0; transition:color var(--dur-base)}
+.footer-nav a:hover{color:var(--gold-400)}
+.footer .rule{background:rgba(228,207,163,.2); margin:44px 0 24px}
+.footer-bottom{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:.74rem; color:rgba(247,244,238,.5); letter-spacing:.04em}
+
+/* ======================================================================
+   REVEAL
+   ====================================================================== */
+.reveal{opacity:0; transform:translateY(16px); transition:opacity var(--dur-reveal) var(--ease-editorial), transform var(--dur-reveal) var(--ease-editorial)}
+.reveal.in{opacity:1; transform:none}
+
+/* ======================================================================
+   RESPONSIVO
+   ====================================================================== */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr; min-height:0}
+  .hero-photo{min-height:clamp(380px,62vh,520px); order:-1}
+  .hero-photo img{object-position:center 18%}
+  .hero-photo::after{background:linear-gradient(180deg,rgba(11,59,50,.1),rgba(11,59,50,.45))}
+  .hero-seal{display:none}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .steps-grid{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:1fr}
+  .wl-grid{grid-template-columns:1fr; gap:44px}
+  .diff-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .nav{display:none; position:fixed; top:84px; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
+    background:var(--pearl); border-bottom:1px solid var(--border-hairline); padding:8px 0; z-index:49}
+  .nav.open{display:flex}
+  .nav a{padding:15px var(--page-margin); font-size:.84rem}
+  .nav a::after{display:none}
+  .nav .btn{margin:12px var(--page-margin); justify-content:center}
+  .menu-toggle{display:block}
+  .split{grid-template-columns:1fr; gap:36px}
+  .split.reverse .split-media{order:0}
+  .split-media .frame{aspect-ratio:4/5 !important; max-width:440px; margin-inline:auto}
+  .svc-grid{grid-template-columns:1fr}
+  .pkg-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr}
+  .choices{grid-template-columns:1fr}
+  .hero-actions .btn{flex:1; justify-content:center}
+  .footer-top{flex-direction:column}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:0ms !important; transition-duration:0ms !important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1; transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="header" id="top">
+  <div class="container">
+    <a class="brand" href="#top" aria-label="Bianca Stela — início">
+      <img src="assets/monogram-esmeralda.svg" alt="" width="40" height="36">
+      <span class="lockup">
+        <span class="name">Bianca Stela</span>
+        <span class="tag">Consultoria de Imagem</span>
+      </span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <a href="#consultoria">A consultoria</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#sobre">Sobre</a>
+      <a class="btn btn-gold" href="#lista">Lista de espera</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.25">
+        <line x1="3" y1="8" x2="23" y2="8"/><line x1="3" y1="13" x2="23" y2="13"/><line x1="3" y1="18" x2="23" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow-line"><span class="eyebrow on-dark">Consultoria de Imagem</span></div>
+      <h1 class="display">Decodificar a beleza<br>individual para libertar a<br><em class="gold">autenticidade.</em></h1>
+      <p class="lead">Ajudo mulheres a compreenderem a própria imagem, reconhecerem suas características e descobrirem maneiras de expressar sua identidade — com clareza, e sem regras impostas.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#lista">Entrar na lista de espera <span class="arrow">&rarr;</span></a>
+        <a class="btn btn-ghost on-dark" href="#servicos">Ver os serviços</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/bianca-hero.png" alt="Bianca Stela, consultora de imagem, retrato editorial" width="1179" height="1758" fetchpriority="high">
+    </div>
+  </div>
+  <div class="hero-seal" aria-hidden="true">
+    <span class="line"></span>
+    <span>Role</span>
+  </div>
+</section>
+
+<!-- ============================ MANIFESTO ============================ -->
+<section class="section manifesto center reveal">
+  <div class="container narrow">
+    <div class="eyebrow-line"><span class="eyebrow">A marca</span></div>
+    <p class="quote">O autoconhecimento é o primeiro passo para uma relação mais consciente e segura com a própria <em class="gold">imagem.</em></p>
+    <p class="lead">Meu trabalho não é ensinar regras sobre o que você deve ou não vestir, nem fazer você se encaixar em padrões. É ajudar você a entender suas características, descobrir o que faz sentido para sua identidade e utilizar esse conhecimento nas suas escolhas. A proposta é que você não apenas receba recomendações, mas entenda o motivo delas e desenvolva autonomia para fazer as próprias escolhas.</p>
+    <div class="sign">
+      <span class="rule-gold" style="width:72px"></span>
+      <span class="eyebrow">Bianca Stela</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ A CONSULTORIA ============================ -->
+<section class="section" id="consultoria" style="background:var(--white)">
+  <div class="container">
+    <div class="split reveal">
+      <div class="split-media">
+        <div class="frame arch">
+          <img src="assets/bianca-estilo.jpg" alt="Retrato de Bianca Stela" loading="lazy">
+          <span class="frame-rule"></span>
+        </div>
+      </div>
+      <div class="split-body">
+        <div class="eyebrow-line"><span class="eyebrow">Sobre a consultoria</span></div>
+        <h2 class="h1">Corpo, cores e estilo traduzidos em conhecimento prático.</h2>
+        <p class="lead">A consultoria de imagem trabalha diferentes aspectos da aparência e da expressão pessoal. Por meio de análises específicas, compreendemos sua identidade corporal, suas características de coloração e seu estilo pessoal.</p>
+        <p class="lead">Cada pessoa possui características próprias — por isso o trabalho considera a individualidade de cada cliente. A ideia é transformar informações sobre corpo, cores e estilo em conhecimento que você possa utilizar na prática, tornando sua relação com a imagem mais leve e consciente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVIÇOS ============================ -->
+<section class="section services" id="servicos">
+  <div class="container">
+    <div class="svc-head reveal">
+      <div>
+        <div class="eyebrow-line"><span class="eyebrow">Serviços individuais</span></div>
+        <h2 class="h1">Três análises, uma identidade.</h2>
+        <p class="subtitle" style="margin-top:14px">Podem ser feitas separadamente ou combinadas em um pacote.</p>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <span class="num">01</span>
+        <h3 class="h3">Sua identidade corporal</h3>
+        <p>Uma análise baseada no Método Kibbe Body Types, para identificar sua identidade corporal e compreender as características e linhas do seu corpo. Você aprende a reconhecer como sua estrutura se relaciona com modelagens, tecidos, formas, comprimentos e detalhes — para trabalhar com suas características, não contra elas.</p>
+        <hr class="rule svc-rule">
+        <span class="svc-foot">Kibbe Body Types</span>
+      </article>
+
+      <article class="svc-card reveal">
+        <span class="num">02</span>
+        <h3 class="h3">Descubra suas cores</h3>
+        <p>A coloração pessoal identifica quais características de cores mais harmonizam com sua aparência natural. Você conhece sua cartela e aprende a utilizá-la nas roupas, maquiagem, acessórios e escolhas do dia a dia. Mais do que uma cartela, a proposta é entender como as cores contribuem para a sua imagem.</p>
+        <hr class="rule svc-rule">
+        <span class="svc-foot">Coloração pessoal</span>
+      </article>
+
+      <article class="svc-card reveal">
+        <span class="num">03</span>
+        <h3 class="h3">Seu estilo</h3>
+        <p>Uma análise para identificar os elementos que representam seu estilo pessoal. Consideramos suas preferências, referências, escolhas, rotina e a maneira como deseja se expressar. O objetivo é reconhecer o que faz sentido para você e construir uma imagem com relação à sua identidade — sem seguir um estilo pronto.</p>
+        <hr class="rule svc-rule">
+        <span class="svc-foot">Análise de estilo</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PACOTES ============================ -->
+<section class="section packages" id="pacotes">
+  <div class="container">
+    <div class="center reveal" style="text-align:center">
+      <div class="eyebrow-line" style="justify-content:center"><span class="eyebrow">Pacotes de consultoria</span></div>
+      <h2 class="h1">Experiências que reúnem os pilares da imagem.</h2>
+      <p class="subtitle" style="margin:14px auto 0; max-width:50ch; color:rgba(247,244,238,.72)">Para quem deseja uma visão mais ampla e integrada da própria imagem.</p>
+    </div>
+
+    <div class="pkg-grid">
+      <article class="pkg-card reveal">
+        <span class="kicker">Pacote · Dois pilares</span>
+        <h3 class="h2">Conheça-se</h3>
+        <div class="pillars-mini">
+          <span class="pill">Identidade corporal</span>
+          <span class="pill">Coloração pessoal</span>
+        </div>
+        <p>Reúne dois pilares importantes da consultoria: identidade corporal e coloração pessoal. Você compreende melhor as características do seu corpo, conhece suas linhas e descobre as cores que mais harmonizam com sua aparência — um processo de autoconhecimento para escolhas mais conscientes na hora de se vestir e se apresentar.</p>
+      </article>
+
+      <article class="pkg-card reveal">
+        <span class="kicker">Pacote · Três pilares</span>
+        <h3 class="h2">Essência</h3>
+        <div class="pillars-mini">
+          <span class="pill">Identidade corporal</span>
+          <span class="pill">Coloração pessoal</span>
+          <span class="pill">Estilo</span>
+        </div>
+        <p>Reúne os três pilares da consultoria: identidade corporal, coloração pessoal e estilo. Uma compreensão completa da sua imagem — seu corpo, suas cores e os elementos que representam seu estilo. Com as três análises, você passa a ter uma visão integral das suas características e aprende a construir uma imagem que tenha mais relação com quem você é.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ESTRATÉGIA ============================ -->
+<section class="section strategy" id="estrategia">
+  <div class="container">
+    <div class="split reverse reveal">
+      <div class="split-media">
+        <div class="frame">
+          <img src="assets/bianca-sobre.png" alt="Bianca Stela" loading="lazy">
+          <span class="frame-rule"></span>
+        </div>
+      </div>
+      <div class="split-body">
+        <div class="eyebrow-line"><span class="eyebrow">Estratégia de imagem</span></div>
+        <h2 class="h1">Um direcionamento para o que você deseja transformar.</h2>
+        <p class="lead">Um serviço para mulheres que possuem um objetivo específico e desejam orientação profissional para realizá-lo. O trabalho começa com a compreensão do que você quer alcançar; a partir disso, analiso suas características, necessidades e possibilidades para desenvolver um direcionamento personalizado.</p>
+        <ul>
+          <li>Mudar o cabelo ou atualizar a sua imagem</li>
+          <li>Encontrar um novo estilo ou transformar a maneira de se vestir</li>
+          <li>Fazer uma mudança na aparência sem saber por onde começar</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ COMO FUNCIONA ============================ -->
+<section class="section steps" id="atendimento">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow-line"><span class="eyebrow">Como funciona o atendimento</span></div>
+      <h2 class="h1" style="max-width:20ch">Do primeiro contato à aplicação no dia a dia.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <span class="num">01</span>
+        <h3 class="h3">Conversa inicial</h3>
+        <p>Começamos entendendo o que você procura e qual serviço faz mais sentido para as suas necessidades.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">02</span>
+        <h3 class="h3">Orientações e materiais</h3>
+        <p>Você recebe as orientações para a realização do serviço, incluindo o envio de fotografias e materiais, quando aplicável.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">03</span>
+        <h3 class="h3">Análise personalizada</h3>
+        <p>Com as informações recebidas, realizo as análises e preparo os materiais personalizados para você.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">04</span>
+        <h3 class="h3">Entrega e aplicação</h3>
+        <p>Você recebe suas orientações, compreende os resultados, tira dúvidas e aprende a aplicar esse conhecimento.</p>
+      </div>
+    </div>
+    <div class="steps-foot reveal">
+      <span class="tagpair">
+        <span class="modality">On-line</span>
+        <span class="modality">Presencial</span>
+      </span>
+      <span class="muted" style="font-size:.92rem">Os atendimentos acontecem conforme o serviço e a disponibilidade.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SOBRE BIANCA ============================ -->
+<section class="section about" id="sobre">
+  <div class="container">
+    <div class="split reveal">
+      <div class="split-media">
+        <div class="frame arch">
+          <img src="assets/bianca-sobre.png" alt="Bianca Stela, especialista em consultoria de imagem" loading="lazy" style="object-position:center 12%">
+          <span class="frame-rule"></span>
+        </div>
+      </div>
+      <div class="split-body">
+        <div class="eyebrow-line"><span class="eyebrow">Sobre Bianca Stela</span></div>
+        <h2 class="h1">Conhecimento técnico, acolhimento e uma abordagem individualizada.</h2>
+        <p class="lead">Sou Bianca Stela, especialista em Consultoria de Imagem. Acredito que não precisamos nos encaixar em padrões para nos sentirmos bem com a nossa imagem — precisamos primeiro entender quem somos, reconhecer nossas características e descobrir como expressá-las. É isso que busco em cada atendimento: conhecimento, clareza e autonomia.</p>
+        <ul class="cred">
+          <li><span class="k">Formação</span><span>CHIC — Renata Meins</span></li>
+          <li><span class="k">Mentoria</span><span>Duda Gemelco</span></li>
+          <li><span class="k">Especialização</span><span>Sistema Kibbe Body Types — Pietra Zucco</span></li>
+        </ul>
+        <p class="signature">Bianca Stela</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DIFERENCIAIS ============================ -->
+<section class="section diff">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow-line"><span class="eyebrow">Diferenciais do trabalho</span></div>
+      <h2 class="h1" style="max-width:18ch">O que sustenta cada atendimento.</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-item reveal"><span class="num">01</span><p>Análises individuais e personalizadas.</p></div>
+      <div class="diff-item reveal"><span class="num">02</span><p>Métodos e ferramentas específicas de consultoria de imagem.</p></div>
+      <div class="diff-item reveal"><span class="num">03</span><p>Integração entre identidade corporal, coloração pessoal e estilo.</p></div>
+      <div class="diff-item reveal"><span class="num">04</span><p>Explicações claras e acessíveis.</p></div>
+      <div class="diff-item reveal"><span class="num">05</span><p>Recomendações que consideram as características individuais.</p></div>
+      <div class="diff-item reveal"><span class="num">06</span><p>Valorização da individualidade, sem imposição de regras.</p></div>
+      <div class="diff-item reveal"><span class="num">07</span><p>Foco no autoconhecimento e na autonomia da cliente.</p></div>
+      <div class="diff-item reveal"><span class="num">08</span><p>Uma primeira impressão de elegância, identidade e confiança.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ LISTA DE ESPERA ============================ -->
+<section class="section waitlist" id="lista">
+  <div class="container">
+    <div class="wl-grid">
+      <div class="wl-intro reveal">
+        <div class="eyebrow-line"><span class="eyebrow">Lista de espera</span></div>
+        <h2 class="h1">Garanta a sua vaga na próxima turma de atendimentos.</h2>
+        <p class="lead">Deixe seus dados e o serviço que mais te interessa. Entrarei em contato com as orientações assim que as próximas vagas forem abertas.</p>
+        <p class="note">Seus dados são usados apenas para o contato sobre a consultoria. Nada é compartilhado com terceiros.</p>
+      </div>
+
+      <form class="wl-form reveal" id="waitlistForm" action="https://formspree.io/f/mzeenpgg" method="POST">
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" required placeholder="Como posso te chamar?">
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" required placeholder="seu@email.com">
+        </div>
+        <div class="field">
+          <label for="whatsapp">WhatsApp <span class="opt">(opcional)</span></label>
+          <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel" placeholder="(00) 00000-0000">
+        </div>
+        <div class="field">
+          <label>Qual serviço te interessa?</label>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="servico" value="Coloração pessoal" required><span>Coloração pessoal</span></label>
+            <label class="choice"><input type="radio" name="servico" value="Kibbe Body Types"><span>Kibbe Body Types</span></label>
+            <label class="choice"><input type="radio" name="servico" value="Descobrir seu estilo"><span>Descobrir seu estilo</span></label>
+            <label class="choice"><input type="radio" name="servico" value="Todas as opções"><span>Todas as opções acima</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="mensagem">Mensagem <span class="opt">(opcional)</span></label>
+          <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre o que você busca."></textarea>
+        </div>
+        <!-- anti-spam honeypot -->
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="_subject" value="Nova inscrição — Lista de espera Bianca Stela">
+        <button type="submit" class="btn btn-primary">Entrar na lista de espera <span class="arrow">&rarr;</span></button>
+        <p class="privacy">Ao enviar, você concorda em receber o contato sobre a consultoria.</p>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <a class="brand" href="#top" aria-label="Bianca Stela — início">
+        <img src="assets/monogram-ouro.svg" alt="" width="52" height="46">
+        <span class="lockup">
+          <span class="name">Bianca Stela</span>
+          <span class="tag">Consultoria de Imagem</span>
+        </span>
+      </a>
+      <p class="footer-tag">Decodificar a beleza individual para libertar a autenticidade.</p>
+      <nav class="footer-nav" aria-label="Rodapé">
+        <a href="#consultoria">A consultoria</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#pacotes">Pacotes</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#lista">Lista de espera</a>
+      </nav>
+    </div>
+    <hr class="rule">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Bianca Stela · Consultoria de Imagem</span>
+      <span>Imagem com identidade e autonomia.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // Ano atual no rodapé
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Menu mobile
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('nav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      });
+    });
+  }
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.12});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Envio AJAX do formulário (Formspree) — mantém o visitante na página
+  var form = document.getElementById('waitlistForm');
+  var status = document.getElementById('formStatus');
+  if(form){
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      status.className = 'form-status';
+      var btn = form.querySelector('button[type=submit]');
+      var original = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = 'Enviando…';
+
+      fetch(form.action, {
+        method:'POST',
+        body:new FormData(form),
+        headers:{'Accept':'application/json'}
+      }).then(function(res){
+        if(res.ok){
+          form.reset();
+          status.className = 'form-status ok';
+          status.textContent = 'Inscrição recebida. Obrigada — entrarei em contato assim que as próximas vagas forem abertas.';
+        } else {
+          return res.json().then(function(data){
+            var msg = (data && data.errors) ? data.errors.map(function(e){return e.message;}).join(' ') : '';
+            throw new Error(msg || 'erro');
+          });
+        }
+      }).catch(function(){
+        status.className = 'form-status err';
+        status.textContent = 'Não foi possível enviar agora. Tente novamente em instantes ou envie novamente mais tarde.';
+      }).finally(function(){
+        btn.disabled = false;
+        btn.innerHTML = original;
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
